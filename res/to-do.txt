@@ -1,0 +1,29 @@
+
+	// To Do :
+	
+	Général
+		- afficher la version sur la home
+	
+	Exercices
+		- Coder le système d'exercices
+	
+	Lexique
+		- Améliorer le contenu
+		- Mettre en place le contenu
+		- Rendre dynamique le contenu
+	
+	Aide-Mémoire
+		- Améliorer le contenu
+		- Mettre en place le contenu
+		
+	+ infos 
+		- Mettre en place le contenu
+		- Améliorer le contenu
+	
+	Wiki
+		- Améliorer le contenu
+		- Coder le système d'edition de page
+	
+	Tableau periodique
+		- Améliorer affichage mobile
+		- Légendes
