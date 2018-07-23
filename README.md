@@ -1,3 +1,6 @@
+
+![NaCl]("res/autres documents/logo_2.jpg")
+
 # NaCl
 
 NaCl est une application mobile proposant à ses utilisateurs de s’entrainer a identifier et nommer diverses composés chimique inorganiques.
