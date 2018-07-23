@@ -1,5 +1,5 @@
 
-![NaCl]("res/autres documents/logo_2.jpg")
+![NaCl](https://github.com/KinoxKlark/NaCl/blob/master/res/autres%20documents/logo_2.jpg?raw=true)
 
 # NaCl
 
