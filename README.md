@@ -10,6 +10,8 @@ Nous mettons en open source notre travail en espérant que cela puisse être uti
 
 Il s'agit de la version rendue en 2015. L'application a été réalisée comme un site web pouvant être ouvert sur téléphone. Une application faisant office de navigateur était alors fournie avec le projet et téléchargeable depuis le store Androïde. Nous avions alors utilisé un service gratuit qui s'autorisait d'ajouter des publicités par-dessus notre contenu. En raison de pollution publicitaire nous avons choisi de retirer cette application pour ne laisser que la solution web.
 
+L'application peut être trouvée ici : [http://nacl.samuel-ernst.com/](http://nacl.samuel-ernst.com/)
+
 ## Futur
 
 Aucune version 2.0 n'est actuellement en chantier, nous avons cependant de nombreuses idées d'amélioration et d'optimisations qui nous mènerons peut être un jour a reprendre le projet. L'une des priorités serait d'utiliser nos nouvelles connaissances pour rendre le toute plus stable et faire du site web une WebApp utilisant les dernières technologies du web. Une remise en forme de la base de données serait aussi à envisager.
