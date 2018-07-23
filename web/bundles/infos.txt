@@ -1,0 +1,2 @@
+Dans ce répertoire, créer des liens symbolique vers les répertoires :
+	/bundles/***Bundle/Ressources

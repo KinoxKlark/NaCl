@@ -1,0 +1,74 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block menu-top-right %}
+	<small style="position:absolute; top:0; left:10px; color:#b1b1b1;"><em>Version {{ app_version }}</em></small>
+	<ul>
+		<!--<li><a href="{% getUrl('param') %}" onclick="return transSlideFromTop(this.href, '#75C699');"><i class="glyphicon glyphicon-cog"></i></a></li>-->
+		<li><a href="{% getUrl('help-index', 'test', 2) %}" onclick="return transSlideFromTop(this.href, '#75C699');"><i class="glyphicon glyphicon-question-sign"></i></a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+	
+	<div class="logo-home">
+		<div class="img">
+			<img src="/web/img/logo.png" /><br/>
+			<em>L'application qui vous aide à réviser votre chimie !</em>
+		</div>
+	</div>
+	
+	<nav class="main-menu">
+		<ul>
+			<li><a href="{% getUrl('nomenclature-exercice') %}" onclick="return transBoxToFull($(this).parent(), this.href);"><img src="/web/img/menu-item/icon-exercices.png"><span>Exercice</span></a></li>
+			<li><a href="{% getUrl('tableau-periodique') %}" onclick="return transBoxToFull($(this).parent(), this.href);"><img src="/web/img/menu-item/icon-tableau-periodique.png"><span>Tableau périodique</span></a></li>
+			<li><a href="{% getUrl('lexique') %}" onclick="return transBoxToFull($(this).parent(), this.href);"><img src="/web/img/menu-item/icon-lexique.png"><span>Lexique</span></a></li>
+			<li><a href="{% getUrl('aide-memoire') %}" onclick="return transBoxToFull($(this).parent(), this.href);"><img src="/web/img/menu-item/icon-aide-memoire.png"><span>Aide mémoire</span></a></li>
+			<li><a href="{% getUrl('wiki', {'slug':'nomenclature-chimique-10'}) %}" onclick="return transBoxToFull($(this).parent(), this.href);"><img src="/web/img/menu-item/icon-wiki.png"><span>Wiki</span></a></li>
+		</ul>
+	</nav>
+	
+{% endblock %}
+
+{% block javascript %}
+	<script>
+		
+		resize_window = function()
+		{
+			if($(window).width() > $(window).height())
+			{
+				$('.logo-home').height($(window).height());
+				$('.logo-home').width($(window).width()*0.3);
+				$('.logo-home .img').css('top', $('.logo-home').height()/2-$('.logo-home .img').height()/2);
+				$('.logo-home .img').css('left', $('.logo-home').width()/2-$('.logo-home .img').width()/2);
+				
+				$('.main-menu').height($(window).height()-$('nav.top-right').height());
+				$('.main-menu').css('top', $('nav.top-right').height()+'px');
+				$('.main-menu').width($(window).width()*0.7);
+			}
+			else
+			{
+				$('.logo-home').height($(window).height()*0.3);
+				$('.logo-home').width($(window).width());
+				$('.logo-home .img').height($('.logo-home').height());
+				$('.logo-home .img').css('top', $('.logo-home').height()/2-$('.logo-home .img').height()/2);
+				$('.logo-home .img').css('left', $('.logo-home').width()/2-$('.logo-home .img').width()/2);
+				
+				$('.main-menu').width($(window).width());
+				$('.main-menu').height($(window).height()*0.7);
+				$('.main-menu').css('top', $('.logo-home').height()+'px');
+				
+			}
+			
+			$('.main-menu li').each(function(){
+				$(this).height($(this).width());
+				$(this).find('img').css('top', (($(this).height()-$(this).find('span').height())/2 - $(this).find('img').height()/2)+'px');
+				$(this).find('img').css('left', (($(this).width())/2 - $(this).find('img').width()/2)+'px');
+			});
+		}
+		
+		resize_window();
+		$( window ).resize(resize_window);
+		$('img').load(resize_window);
+		
+	</script>
+{% endblock %}

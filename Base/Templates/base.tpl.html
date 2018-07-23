@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>NaCl - Apprentissage de la nomenclature en chimie</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/web/css/style.css"/>
+		
+		{% block style %}
+			
+		{% endblock %}
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script src="/web/js/transitions.js"></script>
+	</head>
+	<body style="width:100%; height:100%;" class="{% block body-class %}{% endblock %}">
+		{% block body %}
+			
+		{% endblock %}
+	</body>
+	
+	{% block javascript %}{% endblock %}
+</html>

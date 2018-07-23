@@ -1,0 +1,140 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block body-class %}exercice{% endblock %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="exercice-full">
+		<div class="c exercice">
+			<div class="info">
+				<h1>Exercice</h1>
+				<p>Veuillez indiquer le nom de ce composé :</p>
+			</div>
+		
+			<div class="count"><small>Question</small> <span class="nb">1</span>/<span class="of">10</span></div>
+			
+			<div class="question">
+				<span class="q">H<sub>2</sub>O</span> <a href="#"><i class="glyphicon glyphicon-question-sign"></i></a>
+			</div>
+			
+			<form id="form_answer" class="form-inline">
+				<div class="form-group">
+					<input class="form-control" type="text" name="answer" /> <button class="btn">OK</button>
+				</div>
+			</form>
+			
+			<ul id="reponse" class="alert alert-info">
+				
+			</ul>
+		</div>
+		<div class="c end" style="display:none; margin-left:10%;">
+			
+			<h1>Exercice terminé</h1>
+			
+			<h3>Vous avez fait</h3>
+			<p class="nb_bad"><strong>23</strong> Fautes</p>
+			<p class="nb_good"><strong>50</strong> Juste</p>
+			<p class="nb_help"><strong>12</strong> Demande d'aide</p>
+			
+		</div>
+	</div>
+	
+{% endblock %}
+
+{% block javascript %}
+	
+	<script src="/web/js/exercice-nomenclature.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			
+			// Affichage
+			$('#form_answer').find('input[name=answer]').focus();
+			$('#form_answer').find('input[name=answer]').height($('#form_answer').find('button').height());
+			
+			// Data
+			var list = {{ json_array }};
+			Exercice = new ExerciceNomenclature(list); 
+			
+			// Methodes
+			$('.question a').click(function(){
+				Exercice.addAttempt('help');
+				$('#reponse').show('fast');
+				$('#form_answer').find('input[name=answer]').focus();
+				return false;
+			});
+			
+			// On pose la première question
+			ask_question(Exercice.getNext());
+		});
+		
+		function ask_question(q)
+		{
+			if(q === false) return false;
+			
+			$('#reponse').hide('fast');
+			
+			$('.count .nb').html(Exercice.current+1);
+			$('.count .of').html(Exercice.data.length);
+			
+			$('.question .q').html(q.question);
+			setTimeout(function(){ $('#reponse').html(q.answer.capitalize().replace('(', ' (').replace(/ +/ig, ' ')); }, 1000);
+			
+			$('#form_answer').submit(function(){
+				if(Exercice.submit($(this).find('input[name=answer]').val(), q.answer))
+				{
+					console.log('Bonne réponse !');
+					
+					$(this).find('input[name=answer]').parent().removeClass('has-error');
+					$(this).find('input[name=answer]').parent().addClass('has-success');
+					
+					$(this).find('input[name=answer]').val('');
+					
+					var n = Exercice.getNext();
+					if(n === false)
+					{
+						end_exercice();
+						return false;
+					}
+					ask_question(n);
+				}
+				else
+				{
+					console.log('Erreur');
+					
+					$(this).find('input[name=answer]').parent().removeClass('has-success');
+					$(this).find('input[name=answer]').parent().addClass('has-error');
+				}
+				
+				$(this).find('input[name=answer]').focus();
+				
+				return false;
+			});
+		}
+		
+		function end_exercice()
+		{
+			var end = $('.exercice-full .end');
+			
+			end.find('.nb_bad strong').html(Exercice.countAttempt('bad'));
+			end.find('.nb_good strong').html(Exercice.countAttempt('good'));
+			end.find('.nb_help strong').html(Exercice.countAttempt('help'));
+			
+			$('.exercice-full .exercice').css('display', 'none');
+			$('.exercice-full .end').css('display', 'block');
+		}
+		
+	</script>
+	
+{% endblock %}
+
+{% block style %}
+	<style>
+		html {
+			height:100%;
+		}
+	</style>
+{% endblock %}

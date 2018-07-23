@@ -1,0 +1,66 @@
+{
+	"root":{
+		"path":"/",
+		"controller":"WebBundle:DefaultController:IndexAction"
+	},
+	
+	"download-app":{
+		"path":"/download-app",
+		"controller":"WebBundle:DefaultController:DownloadAction"
+	},
+	
+	"help-index":{
+		"path":"/help",
+		"controller":"WebBundle:HelpController:HelpAction"
+	},
+	
+	"lexique":{
+		"path":"/lexique",
+		"controller":"WebBundle:LexiqueController:LexiqueAction"
+	},
+	
+	"aide-memoire":{
+		"path":"/aide-memoire",
+		"controller":"WebBundle:AideMemoireController:AideMemoireAction"
+	},
+	
+	"param":{
+		"path":"/param",
+		"controller":"WebBundle:ParamController:ParamAction"
+	},
+	
+	"nomenclature-exercice":{
+		"path":"/exercice",
+		"controller":"NomenclatureBundle:ExerciceController:DefaultAction"
+	},
+	
+	"nomenclature-exercice-app":{
+		"path":"/exercice/{nb}",
+		"controller":"NomenclatureBundle:ExerciceController:ExerciceAction",
+		"requirement":{
+			"nb":"\\d+"
+		}
+	},
+	
+	"wiki":{
+		"path":"/wiki/{slug}",
+		"controller":"WikiBundle:DefaultController:WikiAction",
+		"requirement":{
+			"slug":".*-\\d+"
+		}
+	},
+	
+	"tableau-periodique":{
+		"path":"/element",
+		"controller":"ElementsBundle:ElementController:DefaultAction"
+	},
+	
+	
+	"element":{
+		"path":"/element/{slug}",
+		"controller":"ElementsBundle:ElementController:ElementAction",
+		"requirement":{
+			"slug":".*-\\d+"
+		}
+	}
+}

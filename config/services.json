@@ -1,0 +1,7 @@
+{
+	"ConfigService":"Base/Services/ConfigService",
+	"RouterService":"Base/Services/RouterService",
+	"TemplateService":"Base/Services/TemplateService",
+	"TemplateFunctionsService":"Base/Services/TemplateFunctionsService",
+	"DataBaseService":"Base/Services/DataBaseService"
+}

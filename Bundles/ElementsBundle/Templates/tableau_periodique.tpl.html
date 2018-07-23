@@ -1,0 +1,25 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Tableau periodique</h1>
+	
+	<ul id="tableau">
+	{% for element in elements %}
+		
+		<a href="{% getUrl('element', {'slug':'{{ element.nom}}-{{element.numeroAtomique }}'}) %}" class="{% sanitize('{{ element.serieChimique }}') %}"><lI id="element_{{ element.numeroAtomique }}">
+			<div class="num-atomique">{{ element.numeroAtomique }}</div>
+			<div class="symbole">{{ element.symbole }}</div>
+			<div class="nom">{{ element.nom }}</div>
+		</li></a>
+		
+	{% endfor %}
+		<a href="#" class="lanthanides"><li id="element_58_71">58 a 71</li></a>
+		<a href="#" class="actinides"><li id="element_90_103">90 a 103</li></a>
+	</ul>
+	
+{% endblock %}

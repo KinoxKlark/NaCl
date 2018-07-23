@@ -1,0 +1,15 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block body-class %}int-background{% endblock %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Configuration</h1>
+	<div style="overflow:auto;">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec turpis commodo, varius nisi quis, egestas tellus. Sed vitae posuere arcu, sit amet consectetur magna. Etiam nec diam ut odio ullamcorper interdum quis vitae lectus. Sed et massa sed ligula suscipit sodales vel at urna. Curabitur sit amet lorem sem. Aliquam eu sem iaculis nunc blandit commodo. Donec dignissim massa sed dolor tempor accumsan. Sed congue gravida sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur felis lectus, lobortis sed neque eget, aliquam scelerisque enim. Proin lobortis sagittis varius.</p>
+		<p>Nullam at nunc eget nulla congue elementum at ut nunc. Etiam iaculis posuere condimentum. Cras maximus pretium erat a dictum. Sed commodo porta mattis. Pellentesque at urna id dui dapibus varius accumsan id ex. Curabitur fermentum non diam quis dapibus. Morbi vel ligula in erat lacinia feugiat. Nunc tempor id turpis nec pharetra. Nunc mattis velit sit amet vulputate posuere. Mauris a nisi ut dui dictum sagittis quis ut urna. Ut vel felis nec odio pulvinar sagittis sollicitudin non ex. In tincidunt leo sed ullamcorper commodo. Sed ut auctor felis, sit amet posuere arcu. Nulla finibus a risus maximus ornare. Pellentesque placerat erat accumsan lacus scelerisque scelerisque.</p>
+	</div>
+{% endblock %}

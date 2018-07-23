@@ -1,0 +1,10 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1><small>Wiki</small> - {{ title }}</h1>
+	{{ content }}
+{% endblock %}

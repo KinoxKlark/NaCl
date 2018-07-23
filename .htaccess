@@ -1,0 +1,6 @@
+
+RewriteEngine On
+
+#RewriteRule    ^web/(.*)$    $1    [NC,L]
+
+RewriteRule    ^([^\.]+)?$    index.php?%{QUERY_STRING}

@@ -1,0 +1,31 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block body-class %}exercice{% endblock %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Exercice</h1>
+	<p>Voici un exercice pour vous entraîner à retrouver le nom de composés inorganiques à partir de leur formule.</p>
+	<p>Choisissez ci-dessous les paramètres de votre exercice.</p>
+	
+	<h3>Nombre de questions</h3>
+	
+	<ul class="exercice-option">
+		<li><a href="{% getUrl('nomenclature-exercice-app', {'nb':5}) %}">5</a></li>
+		<li><a href="{% getUrl('nomenclature-exercice-app', {'nb':10}) %}">10</a></li>
+		<li><a href="{% getUrl('nomenclature-exercice-app', {'nb':50}) %}">50</a></li>
+		<li><a href="{% getUrl('nomenclature-exercice-app', {'nb':100}) %}">100</a></li>
+	</ul>
+	
+{% endblock %}
+
+{% block javascript %}
+	
+	<script>
+		
+	</script>
+	
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1><sub><small>{{ element.numeroAtomique }}</small></sub>{{ element.symbole }} <small>{{ element.nom }}</small></h1>
+	
+	<h2>Informations générales</h2>
+	<table class="table table-striped elem-info" style="width:100%;">
+		<tr><th>Numéro Atomique</th><td>{{ element.numeroAtomique }}</td></tr>
+		<tr><th>Symbole</th><td>{{ element.symbole }}</td></tr>
+		<tr><th>Nom</th><td>{{ element.nom }}</td></tr>
+		<tr><th>Série Chimique</th><td>{{ element.serieChimique }}</td></tr>
+		<tr><th>Groupe, Période, Bloc</th><td>{{ element.groupePeriodeBloc }}</td></tr>
+		<tr><th>Dureté</th><td>{{ element.durete }}</td></tr>
+		<tr><th>Couleur</th><td>{{ element.couleur }}</td></tr>
+		<tr><th>N°CAS</th><td>{{ element.nCas }}</td></tr>
+		<tr><th>N°EINECS</th><td>{{ element.nEinecs }}</td></tr>
+	</table>
+	
+	<h2>Propriétés atomiques</h2>
+	<table class="table table-striped elem-info" style="width:100%;">
+		<tr><th>Masse Atomique</th><td>{{ element.masseAtomique }}</td></tr>
+		<tr><th>Rayon Atomique</th><td>{{ element.rayonAtomique }}</td></tr>
+		<tr><th>Rayon de Covalence</th><td>{{ element.rayonCovalence }}</td></tr>
+		<tr><th>Rayon de Van Der Waals</th><td>{{ element.rayonVanDerWaals }}</td></tr>
+		<tr><th>Configuration Électronique</th><td>{{ element.configElectronique }}</td></tr>
+		<tr><th>Éléctrons par niveaux d'énergies</th><td>{{ element.electronsNivEnergie }}</td></tr>
+		<tr><th>État d'oxydation</th><td>{{ element.etatOxydation }}</td></tr>
+		<tr><th>Oxyde</th><td>{{ element.oxyde }}</td></tr>
+		<tr><th>Structure Cristalline</th><td>{{ element.structureCristalline }}</td></tr>
+	</table>
+	
+	<h2>Propriétés physiques</h2>
+	<table class="table table-striped elem-info" style="width:100%;">
+		<tr><th>Etat Ordinaire</th><td>{{ element.etatOrdinaire }}</td></tr>
+		<tr><th>Point de fusion</th><td>{{ element.pointFusion }}</td></tr>
+		<tr><th>Point d'ébullition</th><td>{{ element.pointEbullition }}</td></tr>
+		<tr><th>Energie de Fusion</th><td>{{ element.energieFusion }}</td></tr>
+		<tr><th>Energie de vaporation</th><td>{{ element.energieVaporisation }}</td></tr>
+		<tr><th>Volume Molaire</th><td>{{ element.volumeMolaire }}</td></tr>
+		<tr><th>Masse Volumique</th><td>{{ element.masseVolumique }}</td></tr>
+		<tr><th>Pression de vapeur</th><td>{{ element.pressionVapeur }}</td></tr>
+	</table>
+	
+	<h2>Divers</h2>
+	<table class="table table-striped elem-info" style="width:100%;">
+		<tr><th>Éléctro-négativité</th><td>{{ element.electroNegativite }}</td></tr>
+		<tr><th>Chaleure Massique</th><td>{{ element.chaleurMassique }}</td></tr>
+		<tr><th>Conductivité éléctrique</th><td>{{ element.conductiviteElectrique }}</td></tr>
+		<tr><th>Conductivité thermique</th><td>{{ element.conductiviteThermique }}</td></tr>
+		<tr><th>Température Critique</th><td>{{ element.temperatureCritique }}</td></tr>	
+		<tr><th>Pression Critique</th><td>{{ element.pressionCritique }}</td></tr>
+		<tr><th>Volume Critique</th><td>{{ element.volumeCritique }}</td></tr>
+		<tr><th>Vitesse du son</th><td>{{ element.vitesseSon }}</td></tr>
+	</table>
+	
+{% endblock %}

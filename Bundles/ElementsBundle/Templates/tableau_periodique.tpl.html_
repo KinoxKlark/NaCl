@@ -1,0 +1,18 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Tableau periodique</h1>
+	
+	<ul>
+	{% for element in elements %}
+		
+		<lI>{{ element.numeroAtomique }} - <a href="{% getUrl('element', {'slug':'{{ element.nom}}-{{element.numeroAtomique }}'}) %}">{{ element.nom }}</a></li>
+		
+	{% endfor %}
+	</ul>
+	
+{% endblock %}

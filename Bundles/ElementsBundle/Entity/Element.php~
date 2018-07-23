@@ -1,0 +1,270 @@
+<?php
+/**
+ * Classe représentant un élément stocké en BDD
+ *     @Par Luca Sivillica
+ *
+ *   Création: 01.02.2015
+ *     @Version 1.0
+ */
+ 
+ 
+namespace Bundles\ElementsBundle\Entity;
+
+use App\AbstrClass\BaseBundle;
+
+class Element extends BaseBundle
+{
+    /**
+     * Attributs stockés en BDD
+     *
+     * @property int		$numeroAtomique		Numéro atomique de l'élément
+     * @property int		$masseAtomique		Masse atomique de l'élément
+     * @property int		$etatOxydation		Etat d'oxydation de l'élément
+     * @property int		$pointFusion		Point de fusion de l'élément
+     * @property int		$pointEbullition	Point d'ébullition de l'élément
+     * @property string		$symbole		Symbole de l'élément
+     * @property string		$nom			Nom de l'élément
+     * @property int		$electroNegativite	Electronégativité de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$serieChimique		Série chimique de l'élément
+     * @property int		$groupePeriodeBloc	Groupe, période, bloc de l'élément
+     * @property int		$durete			Dureté de l'élément
+     * @property int		$couleur		Couleur de l'élément
+     * @property int		$nCas			N° CAS de l'élément
+     * @property int		$nEinecs		N° EINECS de l'élément
+     * @property int		$rayonAtomique		Rayon atomique l'élément
+     * @property int		$rayonCovalence		Rayon de covalence de l'élément
+     * @property int		$rayonVanDerWaals	Rayon de Van der Walls de l'élément
+     * @property int		$configElectronique	Configuration électronique de l'élément
+     * @property int		$electronsNivEnergie	Electrons par niveau d'énergie de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     * @property int		$masseVolumique		Masse volumique de l'élément
+     */
+    protected $numeroAtomique,
+	      $masseAtomique,
+	      $etatOxydation,
+	      $pointFusion,
+	      $pointEbullition,
+	      $symbole,
+	      $nom,
+	      $electroNegativite,
+	      $masseVolumique,
+	      $serieChimique,
+	      $groupePeriodeBloc,
+	      $durete,
+	      $couleur,
+	      $nCas,
+	      $nEinecs,
+	      $rayonAtomique,
+	      $rayonCovalence,
+	      $rayonVanDerWaals,
+	      $configElectronique,
+	      $electronsNivEnergie,
+	      $oxyde,
+	      $structureCristalline,
+	      $etatOrdinaire,
+	      $energieFusion,
+	      $energieVaporisation,
+	      $temperatureCritique,	//
+	      $pressionCritique,	//
+	      $volumeCritique,		//
+	      $volumeMolaire,
+	      $pressionVapeur,
+	      $vitesseSon,
+	      $chaleurMassique,
+	      $conductiviteElectrique,
+	      $conductiviteThermique;
+    
+    
+    /**
+     * Constante définissant que la route est inexistente
+     */
+    const NO_ROUTE = 1;
+    
+    
+    /**
+     * Constructeur appelant l'hydrateur de l'objet
+     *
+     * @param array	$donnees	Données de l'élement stockées en BDD
+     *
+     * @return void
+     */
+    public function __construct(array $donnees)
+    {
+	$this->hydrate($donnees);
+    }
+    
+    
+    /**
+     * Hydrateur de l'objet appelant les setters adéquats
+     *
+     * @param array	$donnees	Données de l'élement stockées en BDD
+     *
+     * @return void
+     */
+    public function hydrate(array $donnees)
+    {
+	foreach($donnees as $nom => $valeur)
+	{
+	    $methode = 'set' . ucfirst($nom);
+	    
+	    if(method_exists($this, $methode))
+	    {
+		$this->$methode($valeur);
+	    }
+	}
+    }
+    
+    
+    /**
+     * GETTERS
+     */
+    public function numAtomique()
+    {
+	return $this->numAtomique;
+    }
+    
+    
+    public function masseAtomique()
+    {
+	return $this->masseAtomique;
+    }
+    
+    
+    public function etatOxyd()
+    {
+	return $this->etatOxyd;
+    }
+    
+    
+    public function pointFusion()
+    {
+	return $this->pointFusion;
+    }
+    
+    
+    public function pointEbul()
+    {
+	return $this->pointEbul;
+    }
+    
+    
+    public function symbole()
+    {
+	return $this->symbole;
+    }
+    
+    
+    public function nom()
+    {
+	return $this->nom;
+    }
+    
+    
+    public function electroNeg()
+    {
+	return $this->electroNeg;
+    }
+    
+    
+    public function masseVolum()
+    {
+	return $this->masseVolum;
+    }
+    
+    
+    /**
+     * SETTERS
+     */
+    public function setNumAtomique($numAtomique)
+    {
+	if(is_numeric($numAtomique) && $numAtomique >= 1 && $numAtomique <= 118)
+	{
+	    $this->numAtomique = $numAtomique;
+	}
+    }
+    
+    
+    public function setMasseAtomique($masseAtomique)
+    {
+	if(is_numeric($masseAtomique))
+	{
+	    $this->masseAtomique = $masseAtomique;
+	}
+    }
+    
+    
+    public function setEtatOxyd($etatOxyd)
+    {
+	if(is_numeric($etatOxyd))
+	{
+	    $this->etatOxyd = $etatOxyd;
+	}
+    }
+    
+    
+    public function setPointFusion($pointFusion)
+    {
+	if(is_numeric($pointFusion))
+	{
+	    $this->pointFusion = $pointFusion;
+	}
+    }
+    
+    
+    public function setPointEbul($pointEbul)
+    {
+	if(is_numeric($pointEbul))
+	{
+	    $this->pointEbul = $pointEbul;
+	}
+    }
+    
+    
+    public function setSymbole($symbole)
+    {
+	if(preg_match('#^[A-Z]{1}[a-z]{0,2}$#', $symbole))
+	{
+	    $this->symbole = $symbole;
+	}
+    }
+    
+    
+    public function setNom($nom)
+    {
+	if(is_string($nom))
+	{
+	    $this->nom = ucfirst($nom);
+	}
+    }
+    
+    
+    public function setElectroNeg($electroNeg)
+    {
+	if(is_numeric($electroNeg))
+	{
+	    $this->electroNeg = $electroNeg;
+	}
+    }
+    
+    
+    public function setMasseVolum($masseVolum)
+    {
+	if(is_numeric($masseVolum))
+	{
+	    $this->masseVolum = $masseVolum;
+	}
+    }
+}

@@ -1,0 +1,143 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Aide Mémoire</h1>
+	<div style="overflow:auto;">
+		
+		<p>La nomenclature est un ensemble de règles qui permettent de trouver via une méthode donnée le nom de certaines choses. En chimie, on utilise la nomenclature pour identifier correctement des molécules. Ce sont des règles qui non seulement nous permettent de nommer des composés en décrivant leur structure, mais aussi de retrouver la structure d’un composé uniquement à partir de son nom.</p>
+		<p>Avec le temps et l’évolution de la chimie à travers les âges, plusieurs systèmes de nomenclature ont vu le jour, plus ou moins adaptés selon les époques et les besoins. Dans le cadre de ce projet nous nous concentrerons sur celui actuellement en vigueur. Il s’agit de celui proposé par l’IUPAC (International Union of Pure and Applied Chemistry). Il a l’avantage d’être simple et peu contraignant.</p>
+		
+		
+		<h2>Les différents types de liaisons</h2>
+<p>Il existe plusieurs types de liaisons :</p>
+<ol>
+<li><b>La liaison ionique : </b>est un type de liaison formé par une paire d’atomes (souvent entre un non-métal et un métal) ayant une grande différence d’électronégativité (supérieure à 1.7 sur l'échelle de Pauling)</li>
+<li><b>La liaison covalente : </b>est une liaison chimique dans laquelle deux atomes partagent deux électrons d’une des couches externes pour former un doublet d’électrons, les reliant. Ce type de liaison s’opère généralement entre deux non métaux. Pour que la liaison puisse être une liaison de type covalente, il doit y avoir une différence d’électronégativité inférieure à 1.7 sur l’échelle de Pauling.
+	<li><b>La liaison métallique :</b> est une liaison chimique qui permet la cohésion des atomes d'un métal. Dans ce type de liaison, les atomes mettent un ou plusieurs électrons en commun, appelés électrons libres. Pour mieux imager la liaison métallique, considérez un bloc de métal comme un empilement de ions positifs entouré d’une mer d’électrons. Ils sont à l’origine de la conductivité électrique, la malléabilité et la conductivité thermique des métaux. </li>
+</ol>
+<p>En conclusion, la liaison ionique s’opère entre un métal et un non métal si la différence d’électronégativité est supérieure à 1.7. La liaison convalente s’opère lorsque la différence d’électronégativité entre deux non métaux est inférieure à 1.7. La liaison métallique s’opère entre deux métaux.</p>
+
+<h2>Les règles de nomenclature inorganique</h2>
+<h3>Composés ioniques binaires</h3>
+<p>Les composés ioniques binaires sont des molécules qui sont composées de ions de charge positive que l’on nomme « cation », et de ions de charge négative, nommés « anion ». Par convention, lorsque l’on écrit une formule chimique, le cation précède toujours l’anion.</p>
+<div class="alert alert-info">Exemple : NaCl : Na<sup>+</sup> est le cation et Cl<sup>-</sup> est l’anion</div>
+<p>Il existe deux types de composés ioniques binaires : les composés de type I, qui sont constitués d’anions dont la charge ne change jamais, et les composés de type II qui eux sont formés d’ions dont la charge peut varier selon le type d’ion auquel il est associé dans la molécule. Les composés de type II peuvent être formés d’ions polyatomiques où ils peuvent prendrent plusieurs degrés d’oxydation. Nous distinguons donc deux catégories :</p>
+<h4>Composés ioniques de type I :</h4>
+
+	
+<ol>
+<li>il faut d’abord nommer l’anion puis le cation.
+<p><strong>Exemples de formation des noms de composés ioniques binaires de type I :</strong></p>
+<div class="alert alert-info">Mg<sub>2</sub><sup>+</sup> (Magnésium) + O<sub>2</sub><sup>-</sup> (oxygène) = MgO (Oxyde de magnésium)</div>
+<div class="alert alert-info">Ca<sub>2</sub><sup>+</sup> (calcium) + S<sub>2</sub><sup>-</sup> (souffre) = CaS (Sulfure de calcium)</div>
+<div class="alert alert-info">Na<sup>+</sup> (sodium) + Cl<sup>-</sup> (chlore) = NaCl (chlorure de sodium)</div></li>
+<li>Le nom d’un anion (-) monoatomique (donc qui ne comporte qu’un seul atome) est formé en prenant la racine du nom de l’élément et en lui ajoutant le suffixe « -ure ». Attention, car l’oxygène est une exception. Il est nommé : « oxyde »</p>
+<p><strong>Exemple pour le chlore (Cl<sup>-</sup>) :</strong></p>
+<p>Nous prenons sa racine : chlore, puis nous le complémentons du suffixe « -ure » ce qui formera : chlorure.</p>
+<p><strong>Autres exemples :</strong></p>
+<div class="alert alert-info">H<sup>-</sup> : Hydrure</div>
+<div class="alert alert-info">F<sup>-</sup> : Fluorure</div>
+<div class="alert alert-info">S<sub>2</sub><sup>-</sup> : Sulfure</div></li>
+<li><p>Le nom du cation (+) monoatomique reste tel quel. Exemple pour le sodium (Na+) : Sodium.</p>
+<h5><strong>Autres exemples </strong></p>:
+<div class="alert alert-info">H<sup>+</sup> : Hydrogène</div>
+<div class="alert alert-info">Mg<sub>2</sub><sup>+</sup> : Magnésium</div>
+<div class="alert alert-info">Al<sub>3</sub><sup>+</sup> : Aluminium</div>
+</li></ol>
+<h4>Composés ionique de type II :</h4>
+<p>Comme mentionné plus haut, les composés de type II peuvent être formés d’ions polyatomiques où ils peuvent prendrent plusieurs degrés d’oxydation (différentes charges)</p>
+<p><strong>Exemples avec le fer qui est un métal de transition : FeCl<sub>2</sub> et FeCl<sub>3</sub> :</strong></p>
+<div class="alert alert-info">Dans FeCl<sub>2</sub>, le cation Fe a une charge de 2<sup>+</sup></div>
+<div class="alert alert-info">Dans FeCl<sub>3</sub>, le cation Fe a une charge de 3<sup>+</sup></div>
+<p>Les règles d’écritures de formule restent les mêmes que les règles de type I. La seule différence d’écriture est qu’il faut préciser à la fin de la forme moléculaire, la charge du cation en chiffre romain.</p>
+<p><strong>Exemples avec FeCl<sub>2</sub> et FeCl<sub>3</sub> :</strong></p>
+<div class="alert alert-info">FeCl<sub>2</sub> se nomme chlorure de fer (II)</div>
+<div class="alert alert-info">FeCl<sub>3</sub> se nomme chlorure de fer (III)</div>
+
+	
+	
+
+<h3>Ions polyatomiques fréquents</h3>
+<p>Les composés ioniques polyatomiques sont formés d’anions, sauf pour l’ammonium (NH<sub>4</sub><sup>+</sup>), pour lesquels on a donné des noms spécifiques :</p>
+<ul>
+<li>C<sub>2</sub>O<sub>4</sub><sup>2-</sup> : Oxalate</li>
+<li>C<sub>2</sub>H<sub>3</sub>CO<sub>2</sub><sup>-</sup> : Acétate</li>
+<li>CN<sup>-</sup> : Cyanure</li>
+<li>CO<sub>3</sub><sup>2-</sup> : Carbonate</li>
+<li>ClO<sup>-</sup> : Hypochlorite</li>
+<li>ClO<sub>2</sub><sup>-</sup> : Chlorite</li>
+<li>ClO<sub>3</sub><sup>-</sup> : Chlorate</li>
+<li>ClO<sub>4</sub><sup>-</sup> : Perchlorate</li>
+<li>CrO<sub>4</sub><sup>2-</sup> : Chromate</li>
+<li>Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> : Dichromate</li>
+<li>HCO<sub>3</sub><sup>-</sup> : Hydrogénocarbonate</li>
+<li>HPO<sub>4</sub><sup>2-</sup> : Hydrogénophosphate</li>
+<li>H<sub>2</sub>PO<sub>4</sub><sup>-</sup> : Dihydrogénophosphate</li>
+<li>HSO<sub>4</sub><sup>-</sup> : Hydrogénosulfate</li>
+<li>Hg<sub>2</sub><sup>2+</sup> : Mercureux</li>
+<li>MnO<sub>4</sub><sup>-</sup> : Permanganate</li>
+<li>SCN<sup>-</sup> : Thiocyanate</li>
+<li>NH<sub>4</sub><sup>+</sup> : Ammonium</li>
+<li>NO<sub>2</sub><sup>-</sup> : Nitrite</li>
+<li>NO<sub>3</sub><sup>-</sup> : Nitrate</li>
+<li>O<sub>2</sub><sup>2-</sup> : Peroxyde</li>
+<li>OH- : Hydroxyde</li>
+<li>PO<sub>4</sub><sup>3-</sup> : Phosphate</li>
+<li>SO<sub>3</sub><sup>2-</sup> : Sulfite</li>
+<li>SO<sub>4</sub><sup>2-</sup> : Sulfate</li>
+</ul>
+
+<h3>Composés covalents inorganiques</h3>
+<p>Un composé covalent est formé d’atomes distincts. Il est normalement composé de deux non-métaux. La plupart sont ainsi des composés de type binaire. Les règles pour ceux-ci sont :</p>
+<ol>
+<li>Le cation (premier élément de la formule) porte le nom complet de l’élément.</li>
+<li>L’anion (deuxième élément de la formule) est nommé en premier.</li>
+<li>Le nombre d’atomes est pris en compte afin d’utiliser les préfixes suivants :
+<ul><li>1. Mono- ; 2. Di- ; 3. Tri- ; 4. Tétra- ; 5. Penta- ; 6. Hexa- ; 7. Hepta- ; 8. Octa- ; 9. Nona- ; 10. Déca-.</li>
+</ul></li></ol>
+<p>Il faut tenir compte que le préfixe mono- n’est pas utilisé pour désigner le premier élément.</p>
+<p>Exemple : CO se nomme monoxyde de carbone et non monoxyde de monocarbone.</p>
+<p><strong>Exemples de composés covalents</strong></p>
+<div class="alert alert-info">NO<sub>2</sub> : Dioxyde d’azote</div>
+<div class="alert alert-info">N<sub>2</sub>O<sub>3</sub> : Trioxyde de diazote</div>
+<div class="alert alert-info">PCl<sub>5</sub> : Pentachlorure de phosphore </div>
+<div class="alert alert-info">SF<sub>6</sub> : Hexafluorure de soufre</div>
+<p>Pour des raisons de prononciation, il est préférable de laisser tomber la dernière lettre du préfixe lorsque l’élément commence par une voyelle. Exemple avec N<sub>2</sub>O<sub>4</sub> : appelé tétroxyde de diazote et non tétraoxyde de diazote.</p>
+
+
+
+
+
+<h3>Acides inorganiques</h3>
+<p>Un acide est une substance qui, une fois dissoute dans l’eau, libère des ions hydrogène (H+). La formule, pour un acide inorganique, commence toujours par un « H » puisque les règles de nomenclature inorganique veulent que le nom commence par « acide ». </p>
+<ul>
+<li><p>Si l’anion qui constitue l’acide ne contient pas d’oxygène, l’acide se forme avec le suffixe « hydrique ». Ce type d’acide est nommé hydracide.</p>
+<p><strong>Exemples d’hydracides : </strong></p>
+<div class="alert alert-info">HI : Acide Iodehydrique</div>
+<div class="alert alert-info">HCl : Acide chlorhydrique </div>
+<div class="alert alert-info">HF : Acide fluorhydrique</div></li>
+<li><p>Si l’anion qui constitue l’acide contient de l’oxygène, on formera le nom de l’acide avec le suffixe « ique » ou « eux ».</p>
+<p>On utilise le suffixe « ique » (ou parfois « rique ») lorsque l’anion se termine par « ate », alors que l’on utilise le suffixe « eux » quand l’anion se termine par « ite ». Ce type d’acide est nommé : oxoacide ou oxacide.</p>
+<p><strong>Exemples d’oxanions :</strong></p>
+<div class="alert alert-info">HClO<sub>4</sub> (anion : perchlorate) : acide perchlorique</div>
+<div class="alert alert-info">HClO<sub>3</sub> (anion : chlorate) : acide chlorique</div>
+<div class="alert alert-info">HClO<sub>2</sub> (anion : chlorite) : acide chloreux</div>
+<div class="alert alert-info">HClO (anion :hypochlorite) : acide hypochloreux</div>
+<p><strong>Exemples d’oxacides :</strong></p>
+<div class="alert alert-info">HNO<sub>3</sub> : acide nitrique</div>
+<div class="alert alert-info">HNO<sub>2</sub> : acide nitreux</div></li></ul>
+<p>En conclusion, la question à se poser est : Y a-t-il de l’oxygène dans l’anion ?</p>
+<p>Non : Acide + racine de l’anion + suffixe « hydrique »</p>
+<p>Oui : vérifier la fin du nom de l’anion :</p>
+<ul><li>« -ite » : Acide + racine de l’ion polyatomique + suffixe « eux »</li>
+<li>« -ate » : Acide + racine de l’ion polyatomique + suffixe « ique »</li>
+</ul>
+
+
+	
+	</div>
+{% endblock %}

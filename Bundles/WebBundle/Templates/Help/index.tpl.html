@@ -1,0 +1,33 @@
+{% extend '/Base/Templates/layout.tpl.html' %}
+
+{% block body-class %}int-background{% endblock %}
+
+{% block menu-top-right %}
+	{% include '/Base/Templates/menu-back.tpl.html' %}
+{% endblock %}
+
+{% block content %}
+	<h1>Aide</h1>
+	<div style="overflow:auto;">
+		<h2>Qu’est-ce que c’est ?</h2>
+
+		<p><strong>NaCl</strong> est une application à but éducatif visant à aider les jeunes étudiants débutant en chimie à comprendre et apprendre à utiliser la nomenclature en chimie inorganique. </p>
+
+		<p>Pour se faire nous mettons à disposition un ensemble de documents proposant une synthèse de la matière ainsi que des exercices pour s’entraîner en pratiquant. </p>
+
+		<p>Divers outils comme le tableau périodique ou le lexique proposent un complément d’information et des ressources utiles pour les étudiants.</p>
+
+		<h2>Qui sommes-nous ?</h2>
+		
+		<p>Nous sommes un groupe de trois étudiants actuellement en maturité technique. Nous avons choisi de créer cette application dans le cadre du projet TIP qui nous est imposé en cours. Notre but était de proposer un contenu concret et utile. De par nos passions respectives nous nous sommes rapidement tournés vers le développement d’une application. C’est assez naturellement que le sujet de la chimie s’est imposé.</p>
+
+		<p>Les objectifs principaux que nous avons visé sont :</p>
+
+		
+		<ul>
+			<li>Accessibilité à la documentation en tout temps</li>
+			<li>Accessibilité à la documentation n’importe où</li>
+			<li>Documentation concise et précise</li>
+		</ul>	
+	</div>
+{% endblock %}
